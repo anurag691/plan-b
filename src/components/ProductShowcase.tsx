@@ -111,7 +111,7 @@ export default function ProductShowcase() {
   const current = categories[active];
 
   return (
-    <section id="products" className="relative py-32 overflow-hidden">
+    <section id="products" className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-cyan/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6">
@@ -121,16 +121,16 @@ export default function ProductShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full glass text-neon-purple text-sm font-medium mb-6">
             Products
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-grotesk)] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-grotesk)] mb-4 md:mb-6">
             <span className="text-white">Cards for Every </span>
             <span className="text-gradient">Occasion</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
             From weddings to business meetings, we have the perfect AR card for every moment.
           </p>
         </motion.div>
@@ -141,7 +141,7 @@ export default function ProductShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-3 mb-16"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 md:mb-16"
         >
           {categories.map((cat, i) => (
             <motion.button
@@ -191,7 +191,7 @@ export default function ProductShowcase() {
                 ))}
               </div>
 
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Starting from</p>
                   <p className="text-3xl font-bold text-white font-[family-name:var(--font-grotesk)]">{current.price}</p>
@@ -211,7 +211,7 @@ export default function ProductShowcase() {
             <div className="relative">
               <div className="card-3d">
                 <div className={`rounded-3xl overflow-hidden glass-strong p-1`}>
-                  <div className={`relative rounded-2xl overflow-hidden bg-gradient-to-br ${current.bgGradient} p-10`}>
+                  <div className={`relative rounded-2xl overflow-hidden bg-gradient-to-br ${current.bgGradient} p-6 sm:p-10`}>
                     <div className="absolute inset-0 bg-dark-card/80" />
 
                     <div className="relative z-10">

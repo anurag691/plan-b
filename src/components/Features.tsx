@@ -72,7 +72,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="relative py-32 overflow-hidden">
+    <section id="features" className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-purple/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6">
@@ -82,16 +82,16 @@ export default function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-16 lg:mb-20"
         >
           <span className="inline-block px-4 py-1.5 rounded-full glass text-neon-cyan text-sm font-medium mb-6">
             Features
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-grotesk)] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-grotesk)] mb-4 md:mb-6">
             <span className="text-white">Everything You Need to </span>
             <span className="text-gradient">Wow</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
             From stunning design to seamless AR technology, we provide everything to make your cards unforgettable.
           </p>
         </motion.div>

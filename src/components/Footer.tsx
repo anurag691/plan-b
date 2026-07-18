@@ -84,17 +84,17 @@ export default function Footer() {
           <div className="absolute inset-0 bg-gradient-to-r from-neon-purple via-neon-pink to-neon-cyan opacity-10" />
           <div className="absolute inset-0 bg-dark-card/80" />
 
-          <div className="relative z-10 p-12 md:p-16 text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 font-[family-name:var(--font-grotesk)]">
+          <div className="relative z-10 p-6 sm:p-10 md:p-16 text-center">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4 font-[family-name:var(--font-grotesk)]">
               Ready to Make Your Card Come Alive?
             </h3>
-            <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
+            <p className="text-gray-400 text-base md:text-lg mb-6 md:mb-8 max-w-xl mx-auto">
               Join 5,000+ happy customers who&apos;ve transformed their cards into unforgettable experiences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
                 href="#contact"
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-neon-purple to-neon-pink text-white font-semibold text-lg hover:shadow-2xl hover:shadow-neon-purple/30 transition-all duration-500 inline-flex items-center justify-center gap-2"
+                className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-neon-purple to-neon-pink text-white font-semibold text-base sm:text-lg hover:shadow-2xl hover:shadow-neon-purple/30 transition-all duration-500 inline-flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -104,7 +104,7 @@ export default function Footer() {
               <motion.a
                 href="https://wa.me/919876543210"
                 target="_blank"
-                className="px-8 py-4 rounded-full glass text-white font-semibold text-lg hover:bg-white/10 transition-all duration-300 inline-flex items-center justify-center gap-2"
+                className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full glass text-white font-semibold text-base sm:text-lg hover:bg-white/10 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -115,7 +115,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Footer Content */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 pb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pb-8 md:pb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="flex items-center gap-2 mb-6">

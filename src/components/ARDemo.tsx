@@ -8,7 +8,7 @@ export default function ARDemo() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section id="ar-demo" className="relative py-32 overflow-hidden">
+    <section id="ar-demo" className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-purple/30 to-transparent" />
 
       {/* Background */}
@@ -24,21 +24,21 @@ export default function ARDemo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-16 lg:mb-20"
         >
           <span className="inline-block px-4 py-1.5 rounded-full glass text-neon-cyan text-sm font-medium mb-6">
             Live Demo
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-grotesk)] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-grotesk)] mb-4 md:mb-6">
             <span className="text-white">Experience the </span>
             <span className="text-gradient">Future of Cards</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
             Watch how a simple scan transforms a printed card into an immersive digital experience.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Left: Phone Mockup */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

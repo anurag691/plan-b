@@ -19,8 +19,8 @@ const brands = [
 
 export default function BrandMarquee() {
   return (
-    <section className="relative py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-10">
+    <section className="relative py-10 md:py-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-6 md:mb-10">
         <p className="text-center text-gray-600 text-sm uppercase tracking-widest">
           Trusted by leading brands and thousands of happy customers
         </p>

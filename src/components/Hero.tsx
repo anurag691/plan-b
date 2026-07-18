@@ -59,8 +59,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
-          <Zap className="w-4 h-4 text-neon-cyan" />
-          <span className="text-sm text-gray-300">India&apos;s First AR-Powered Card Platform</span>
+          <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neon-cyan" />
+          <span className="text-xs sm:text-sm text-gray-300">India&apos;s First AR-Powered Card Platform</span>
         </motion.div>
 
         {/* Main Heading */}
@@ -68,7 +68,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-6 font-[family-name:var(--font-grotesk)]"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-4 md:mb-6 font-[family-name:var(--font-grotesk)]"
         >
           <span className="text-white">Cards That</span>
           <br />
@@ -80,7 +80,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed px-2"
         >
           Transform ordinary cards into extraordinary experiences. Scan, watch, and share
           personalized videos, messages, and 3D animations — all with a simple scan.
@@ -91,11 +91,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-10 md:mb-16 px-2"
         >
           <motion.a
             href="#contact"
-            className="group flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-neon-purple to-neon-pink text-white font-semibold text-lg hover:shadow-2xl hover:shadow-neon-purple/30 transition-all duration-500"
+            className="group flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-neon-purple to-neon-pink text-white font-semibold text-base sm:text-lg hover:shadow-2xl hover:shadow-neon-purple/30 transition-all duration-500"
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -106,7 +106,7 @@ export default function Hero() {
 
           <motion.a
             href="#how-it-works"
-            className="group flex items-center gap-2 px-8 py-4 rounded-full glass text-white font-semibold text-lg hover:bg-white/10 transition-all duration-300"
+            className="group flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full glass text-white font-semibold text-base sm:text-lg hover:bg-white/10 transition-all duration-300"
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -120,12 +120,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 60, rotateX: 20 }}
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ duration: 1.2, delay: 1.2, type: "spring" }}
-          className="relative max-w-lg mx-auto"
+          className="relative max-w-sm sm:max-w-lg mx-auto px-2"
         >
           <div className="card-3d">
             <div className="card-3d-inner rounded-3xl overflow-hidden neon-border">
               <div className="glass-strong rounded-3xl p-1">
-                <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-dark-card to-dark p-8 pb-6">
+                  <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-dark-card to-dark p-5 sm:p-8 pb-5 sm:pb-6">
                   {/* Phone mockup content */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-purple via-neon-pink to-neon-cyan" />
 
