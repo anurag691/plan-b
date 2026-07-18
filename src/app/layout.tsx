@@ -1,26 +1,27 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Cormorant_Garamond, Inter, Great_Vibes } from "next/font/google";
 import "./globals.css";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-serif",
+});
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
 });
 
-const grotesk = Space_Grotesk({
+const vibes = Great_Vibes({
   subsets: ["latin"],
-  variable: "--font-grotesk",
+  weight: "400",
+  variable: "--font-script",
 });
 
 export const metadata: Metadata = {
-  title: "Cardify — Cards That Come Alive | AR Greeting Cards & Business Cards",
-  description: "Premium Augmented Reality greeting cards, wedding invitations, and business cards. Scan, experience, and share unforgettable moments. India's first AR-powered card platform.",
-  keywords: "AR cards, augmented reality cards, greeting cards, wedding invitations, business cards, AR business cards, video greeting cards, India",
-  openGraph: {
-    title: "Cardify — Cards That Come Alive",
-    description: "Premium AR greeting cards and business cards that come alive when scanned.",
-    type: "website",
-  },
+  title: "Cardify — Cards That Come Alive | AR Greeting Cards",
+  description: "Premium AR greeting cards and wedding invitations. Scan the card, watch the magic. India's first AR-powered card platform.",
 };
 
 export default function RootLayout({
@@ -29,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} ${grotesk.variable} antialiased`}>
+    <html lang="en">
+      <body className={`${cormorant.variable} ${inter.variable} ${vibes.variable} antialiased`}>
         {children}
       </body>
     </html>

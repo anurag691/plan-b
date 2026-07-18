@@ -6,12 +6,12 @@ import { motion } from "framer-motion";
 function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const animated = useRef(false);
+  const done = useRef(false);
 
   useEffect(() => {
     const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting && !animated.current) {
-        animated.current = true;
+      if (e.isIntersecting && !done.current) {
+        done.current = true;
         let s = 0;
         const inc = target / 125;
         const t = setInterval(() => { s += inc; if (s >= target) { setCount(target); clearInterval(t); } else setCount(Math.floor(s)); }, 16);
@@ -26,13 +26,13 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
 
 export default function Stats() {
   return (
-    <section className="relative py-10 md:py-16 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-neon-purple/5 via-neon-pink/5 to-neon-cyan/5" />
+    <section className="relative py-12 md:py-16 bg-navy overflow-hidden">
+      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(201,168,76,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {[
             [5000, "+", "Cards Created"],
-            [98, "%", "Happy Clients"],
+            [98, "%", "Satisfaction"],
             [50, "+", "Cities"],
             [15, "+", "Languages"],
           ].map(([val, suf, label], i) => (
@@ -44,10 +44,10 @@ export default function Stats() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="text-center"
             >
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient font-[family-name:var(--font-grotesk)] mb-1">
+              <p className="text-3xl md:text-4xl font-bold gold-text font-[family-name:var(--font-serif)] mb-1">
                 <Counter target={val as number} suffix={suf as string} />
               </p>
-              <p className="text-gray-400 text-[10px] sm:text-xs">{label as string}</p>
+              <p className="text-white/40 text-[10px] sm:text-xs uppercase tracking-wider">{label as string}</p>
             </motion.div>
           ))}
         </div>
