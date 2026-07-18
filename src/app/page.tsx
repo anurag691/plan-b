@@ -10,10 +10,12 @@ import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Scene3D from "@/components/Scene3D";
 
 export default function Home() {
   return (
     <main className="noise-bg">
+      <Scene3D />
       <Navbar />
       <Hero />
       <BrandMarquee />

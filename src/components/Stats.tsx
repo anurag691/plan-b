@@ -3,72 +3,51 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
+function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const hasAnimated = useRef(false);
+  const animated = useRef(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-          let start = 0;
-          const duration = 2000;
-          const increment = target / (duration / 16);
-          const timer = setInterval(() => {
-            start += increment;
-            if (start >= target) {
-              setCount(target);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(start));
-            }
-          }, 16);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !animated.current) {
+        animated.current = true;
+        let s = 0;
+        const inc = target / 125;
+        const t = setInterval(() => { s += inc; if (s >= target) { setCount(target); clearInterval(t); } else setCount(Math.floor(s)); }, 16);
+      }
+    }, { threshold: 0.5 });
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
   }, [target]);
 
-  return (
-    <span ref={ref}>
-      {count.toLocaleString()}{suffix}
-    </span>
-  );
+  return <span ref={ref}>{count.toLocaleString()}{suffix}</span>;
 }
-
-const stats = [
-  { value: 5000, suffix: "+", label: "Cards Created", description: "AR cards delivered" },
-  { value: 98, suffix: "%", label: "Happy Clients", description: "Customer satisfaction" },
-  { value: 50, suffix: "+", label: "Cities", description: "Across India" },
-  { value: 15, suffix: "+", label: "Languages", description: "Multi-language support" },
-];
 
 export default function Stats() {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-10 md:py-16 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-neon-purple/5 via-neon-pink/5 to-neon-cyan/5" />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, i) => (
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          {[
+            [5000, "+", "Cards Created"],
+            [98, "%", "Happy Clients"],
+            [50, "+", "Cities"],
+            [15, "+", "Languages"],
+          ].map(([val, suf, label], i) => (
             <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
+              key={label as string}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="text-center"
             >
-              <p className="text-4xl md:text-5xl font-bold text-gradient font-[family-name:var(--font-grotesk)] mb-2">
-                <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient font-[family-name:var(--font-grotesk)] mb-1">
+                <Counter target={val as number} suffix={suf as string} />
               </p>
-              <p className="text-white font-semibold mb-1">{stat.label}</p>
-              <p className="text-gray-500 text-sm">{stat.description}</p>
+              <p className="text-gray-400 text-[10px] sm:text-xs">{label as string}</p>
             </motion.div>
           ))}
         </div>

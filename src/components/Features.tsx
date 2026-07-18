@@ -1,73 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Scan,
-  Video,
-  Palette,
-  Shield,
-  Globe,
-  Smartphone,
-  Music,
-  Clock,
-  Gift,
-} from "lucide-react";
+import { Scan, Video, Palette, Shield, Globe, Smartphone, Music, Clock, Gift } from "lucide-react";
 
 const features = [
-  {
-    icon: Scan,
-    title: "Instant AR Scan",
-    description: "Recipient scans the card with their phone camera — no app needed. Works on both iOS and Android.",
-    gradient: "from-neon-purple to-neon-blue",
-  },
-  {
-    icon: Video,
-    title: "Video Messages",
-    description: "Upload personal videos, voice messages, or photo slideshows that play when the card is scanned.",
-    gradient: "from-neon-pink to-neon-purple",
-  },
-  {
-    icon: Palette,
-    title: "Premium Design",
-    description: "Each card is crafted with luxury print finishes — embossing, foil stamping, and premium textures.",
-    gradient: "from-neon-cyan to-neon-blue",
-  },
-  {
-    icon: Shield,
-    title: "Private & Secure",
-    description: "Password-protect your personal messages. Only the intended recipient can unlock the AR experience.",
-    gradient: "from-neon-purple to-neon-pink",
-  },
-  {
-    icon: Globe,
-    title: "Multi-Language",
-    description: "Support for Hindi, English, Tamil, Bengali, and 10+ Indian languages. Perfect for diverse audiences.",
-    gradient: "from-neon-blue to-neon-cyan",
-  },
-  {
-    icon: Smartphone,
-    title: "No App Required",
-    description: "Recipients simply scan the QR code or AR marker — the experience opens instantly in their browser.",
-    gradient: "from-neon-pink to-neon-cyan",
-  },
-  {
-    icon: Music,
-    title: "Background Music",
-    description: "Add custom background music or soundtracks that play along with your video message.",
-    gradient: "from-neon-purple to-neon-blue",
-  },
-  {
-    icon: Clock,
-    title: "RSVP & Countdown",
-    description: "Built-in RSVP buttons and live countdown timers for event invitations. Track responses in real-time.",
-    gradient: "from-neon-cyan to-neon-pink",
-  },
-  {
-    icon: Gift,
-    title: "Gift Registry",
-    description: "Include a gift registry link directly in the AR experience. Make gifting effortless.",
-    gradient: "from-neon-blue to-neon-purple",
-  },
+  { icon: Scan, title: "Instant Scan", desc: "No app needed. Works on any phone.", gradient: "from-neon-purple to-neon-blue" },
+  { icon: Video, title: "Video Messages", desc: "Upload personal videos that play on scan.", gradient: "from-neon-pink to-neon-purple" },
+  { icon: Palette, title: "Premium Design", desc: "Embossing, foil stamping, luxury textures.", gradient: "from-neon-cyan to-neon-blue" },
+  { icon: Shield, title: "Private & Secure", desc: "Password-protect personal messages.", gradient: "from-neon-purple to-neon-pink" },
+  { icon: Globe, title: "Multi-Language", desc: "Hindi, English, Tamil, and 10+ languages.", gradient: "from-neon-blue to-neon-cyan" },
+  { icon: Smartphone, title: "No App Required", desc: "QR code opens in browser instantly.", gradient: "from-neon-pink to-neon-cyan" },
+  { icon: Music, title: "Background Music", desc: "Custom soundtracks with your message.", gradient: "from-neon-purple to-neon-blue" },
+  { icon: Clock, title: "RSVP & Timer", desc: "Built-in RSVP and live countdown.", gradient: "from-neon-cyan to-neon-pink" },
+  { icon: Gift, title: "Gift Registry", desc: "Include gift links in the AR experience.", gradient: "from-neon-blue to-neon-purple" },
 ];
 
 export default function Features() {
@@ -75,48 +20,39 @@ export default function Features() {
     <section id="features" className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-purple/30 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Section Header */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 md:mb-16 lg:mb-20"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-12 md:mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full glass text-neon-cyan text-sm font-medium mb-6">
+          <span className="inline-block px-4 py-1.5 rounded-full glass text-neon-cyan text-sm font-medium mb-4">
             Features
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-grotesk)] mb-4 md:mb-6">
-            <span className="text-white">Everything You Need to </span>
-            <span className="text-gradient">Wow</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-grotesk)]">
+            <span className="text-white">Built to </span>
+            <span className="text-gradient">Impress.</span>
           </h2>
-          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
-            From stunning design to seamless AR technology, we provide everything to make your cards unforgettable.
-          </p>
         </motion.div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-5">
+          {features.map((f, i) => (
             <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 40 }}
+              key={f.title}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="group glass rounded-2xl p-8 hover:bg-white/[0.05] transition-all duration-500 cursor-default"
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+              whileHover={{ y: -6, transition: { duration: 0.3 } }}
+              className="glass rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:bg-white/[0.05] transition-all duration-500 group"
             >
-              <div
-                className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}
-              >
-                <feature.icon className="w-7 h-7 text-white" />
+              <div className={`w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br ${f.gradient} flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500`}>
+                <f.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 font-[family-name:var(--font-grotesk)]">
-                {feature.title}
-              </h3>
-              <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+              <h3 className="text-sm sm:text-base font-bold text-white mb-1 font-[family-name:var(--font-grotesk)]">{f.title}</h3>
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{f.desc}</p>
             </motion.div>
           ))}
         </div>
